@@ -5,7 +5,7 @@ const Statistics = () => {
   const { correct, incorrect, wpm } = useSelector(state => state.stats);
 
   return (
-    <div>
+    <div style={{ textAlign: 'center', fontSize: '1.5em' }}>
       <p>Correct: {correct}</p>
       <p>Incorrect: {incorrect}</p>
       <p>WPM: {wpm}</p>

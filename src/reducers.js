@@ -1,7 +1,8 @@
-// reducers.js
+import { generateRandomWords } from './generateRandomWords';
+
 const initialState = {
     text: '',
-    words: ['example', 'words', 'for', 'typing', 'test'],
+    words: generateRandomWords(100),
     stats: {
       correct: 0,
       incorrect: 0,
@@ -15,6 +16,17 @@ const initialState = {
         return { ...state, text: action.payload };
       case 'CALCULATE_STATS':
         return { ...state, stats: action.payload };
+        case 'RESET_WORDS': 
+      return { 
+        ...state, 
+        text: '',  
+        words: generateRandomWords(100),  
+        stats: {
+          correct: 0,
+          incorrect: 0,
+          wpm: 0
+        }
+      };
       default:
         return state;
     }

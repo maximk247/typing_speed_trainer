@@ -1,15 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from './store';
-import TypingArea from './components/TypingArea';
 import Statistics from './components/Statistics';
+import TypingArea from './components/TypingArea';
+import store from './store';
 
 function App() {
   return (
     <Provider store={store}>
       <div>
-        <TypingArea />
         <Statistics />
+        <TypingArea />
       </div>
     </Provider>
   );
